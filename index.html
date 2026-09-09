@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portal educativo interactivo sobre arquitectura de computadores, redes e investigación de ciberdelitos.">
+  <title>Arquitectura, Redes y Ciberdelitos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script defer src="js/script.js"></script>
+</head>
+<body>
+  <div class="progress-bar" aria-hidden="true"><span id="progressFill"></span></div>
+  <header class="site-header" id="inicio">
+    <nav class="nav container" aria-label="Navegación principal">
+      <a class="brand" href="#inicio" aria-label="Ir al inicio"><span class="brand-mark">⌁</span><span>FORÉNSICA<span class="brand-dot">.</span>LAB</span></a>
+      <button class="menu-toggle icon-button" type="button" aria-expanded="false" aria-controls="navLinks" aria-label="Abrir menú">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a class="nav-link active" href="#inicio">Inicio</a>
+        <a class="nav-link" href="#modulo-1">Módulo 01</a>
+        <a class="nav-link" href="#modulo-2">Módulo 02</a>
+        <a class="nav-link" href="#modulo-3">Módulo 03</a>
+        <a class="nav-link" href="#conclusiones">Conclusiones</a>
+        <button class="theme-toggle icon-button" type="button" aria-label="Cambiar tema" title="Cambiar tema">☾</button>
+        <button class="pdf-button" type="button" id="pdfButton">⇩ <span>Exportar PDF</span></button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="printArea">
+    <section class="hero section-shell" aria-labelledby="hero-title">
+      <div class="hero-grid container">
+        <div class="hero-copy reveal">
+          <p class="eyebrow"><span class="status-dot"></span> LABORATORIO DE EVIDENCIA DIGITAL / 01</p>
+          <h1 id="hero-title">Arquitectura,<br><em>redes</em> y ciberdelitos</h1>
+          <p class="hero-lead">Fundamentos tecnológicos para leer las huellas que dejan los datos: desde el pulso de una CPU hasta el recorrido de un paquete.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#modulo-1">Explorar contenido <span>↘</span></a>
+            <span class="hero-note">3 módulos · 5 actividades</span>
+          </div>
+        </div>
+        <div class="hero-visual reveal" aria-label="Diagrama de un computador conectado a una red" role="img">
+          <div class="visual-label label-top">EVIDENCIA / EN TIEMPO REAL</div>
+          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+          <div class="core-chip"><span>CPU</span><small>CORE 04</small></div>
+          <div class="node node-a">RAM</div><div class="node node-b">NET</div><div class="node node-c">LOG</div>
+          <div class="data-line line-a"></div><div class="data-line line-b"></div><div class="data-line line-c"></div>
+          <span class="packet packet-a"></span><span class="packet packet-b"></span>
+          <div class="visual-label label-bottom">CAPTURA ACTIVA <strong>●</strong></div>
+        </div>
+      </div>
+      <div class="hero-ticker" aria-label="Temas del portal"><span>CPU / MEMORIA / PROTOCOLOS / EVIDENCIA VOLÁTIL / TRAZABILIDAD /</span><span>CPU / MEMORIA / PROTOCOLOS / EVIDENCIA VOLÁTIL / TRAZABILIDAD /</span></div>
+    </section>
+
+    <section class="intro section-pad container reveal" aria-labelledby="intro-title">
+      <div class="section-kicker">00 / MAPA DE LECTURA</div>
+      <div class="intro-layout"><h2 id="intro-title">Toda evidencia tiene<br><span>un lugar donde vivir.</span></h2><div><p>Comprender cómo funcionan los computadores, las redes y la memoria permite interpretar evidencias digitales: cómo se generan, dónde se almacenan y cómo se transmiten.</p><p class="muted">Este recorrido conecta la teoría con la mirada práctica de una investigación de ciberdelitos.</p></div></div>
+      <div class="stat-row"><div><strong>03</strong><span>módulos esenciales</span></div><div><strong>05</strong><span>actividades guiadas</span></div><div><strong>360°</strong><span>visión de la evidencia</span></div></div>
+    </section>
+
+    <section class="module module-dark section-pad" id="modulo-1" aria-labelledby="m1-title">
+      <div class="container">
+        <div class="module-heading reveal"><div class="module-number">01</div><div><p class="eyebrow accent">FUNDAMENTOS / HARDWARE</p><h2 id="m1-title">Arquitectura y estructura<br>de computadores</h2></div><p class="module-summary">La arquitectura define cómo se organizan los componentes para transformar instrucciones en resultados. Para investigar, importa saber qué estaba ocurriendo dentro del equipo.</p></div>
+        <div class="component-grid reveal">
+          <article class="component-card is-selected" data-component="alu"><div class="card-icon">∑</div><div><span class="card-index">01 / CPU</span><h3>ALU</h3><p>Unidad Aritmético-Lógica</p></div><span class="card-arrow">↗</span></article>
+          <article class="component-card" data-component="control"><div class="card-icon">◎</div><div><span class="card-index">02 / CPU</span><h3>UC</h3><p>Unidad de Control</p></div><span class="card-arrow">↗</span></article>
+          <article class="component-card" data-component="register"><div class="card-icon">▦</div><div><span class="card-index">03 / CPU</span><h3>Registros</h3><p>Memoria instantánea</p></div><span class="card-arrow">↗</span></article>
+        </div>
+        <div class="component-detail reveal" id="componentDetail"><div class="detail-symbol">∑</div><div><span class="eyebrow accent">UNIDAD ARITMÉTICO-LÓGICA</span><h3>El lugar donde las instrucciones se vuelven acción.</h3><p>La ALU realiza operaciones matemáticas y lógicas: sumar, comparar, desplazar bits o evaluar condiciones. Es una pieza esencial para entender qué cálculo estaba ejecutando un proceso.</p><div class="tag-list"><span>SUMA</span><span>COMPARACIÓN</span><span>DECISIÓN</span></div></div></div>
+
+        <div class="subsection-head reveal"><div><span class="eyebrow accent">EL RITMO DE LA CPU</span><h3>Ciclo de instrucción</h3></div><p>Una instrucción atraviesa tres estados. Avanza el ciclo y observa qué hace cada etapa.</p></div>
+        <div class="instruction-lab reveal"><div class="cycle-track"><div class="cycle-line"></div><button class="cycle-step active" data-step="fetch"><span>01</span><strong>FETCH</strong><small>Búsqueda</small></button><button class="cycle-step" data-step="decode"><span>02</span><strong>DECODE</strong><small>Decodificación</small></button><button class="cycle-step" data-step="execute"><span>03</span><strong>EXECUTE</strong><small>Ejecución</small></button></div><div class="cycle-output"><div class="instruction-code">MOV R1, [0x04]</div><div><span class="eyebrow accent" id="cycleLabel">01 / BÚSQUEDA</span><p id="cycleText">La CPU obtiene la siguiente instrucción desde la memoria.</p></div><button class="small-button" id="nextCycle" type="button">Siguiente etapa ↗</button></div></div>
+
+        <div class="subsection-head reveal"><div><span class="eyebrow accent">CERCANÍA / VELOCIDAD / CAPACIDAD</span><h3>Jerarquía de memoria</h3></div><p>Cuanto más cerca de la CPU, más rápido y pequeño. Selecciona un nivel para inspeccionarlo.</p></div>
+        <div class="memory-lab reveal"><div class="memory-stack"><button class="memory-level level-register active" data-memory="register"><span>01</span><strong>REGISTROS</strong><i>ultrarrápida / mínima</i></button><button class="memory-level level-cache" data-memory="cache"><span>02</span><strong>CACHE</strong><i>muy rápida / pequeña</i></button><button class="memory-level level-ram" data-memory="ram"><span>03</span><strong>RAM</strong><i>rápida / media</i></button><button class="memory-level level-disk" data-memory="disk"><span>04</span><strong>SSD / HDD</strong><i>persistente / amplia</i></button></div><div class="memory-info"><span class="eyebrow accent">NIVEL SELECCIONADO</span><h3 id="memoryTitle">Registros</h3><p id="memoryText">Datos e instrucciones que la CPU está usando en este preciso instante.</p><div class="memory-meter"><span>VELOCIDAD</span><div><i id="speedMeter"></i></div><span>CAPACIDAD</span><div><i id="capacityMeter"></i></div></div></div></div>
+      </div>
+    </section>
+
+    <section class="module section-pad" id="modulo-2" aria-labelledby="m2-title">
+      <div class="container">
+        <div class="module-heading reveal"><div class="module-number">02</div><div><p class="eyebrow">FUNDAMENTOS / CONECTIVIDAD</p><h2 id="m2-title">Fundamentos de redes<br>de comunicaciones</h2></div><p class="module-summary">Una red permite compartir información y recursos. En una investigación, cada conexión puede aportar contexto: quién se comunicó, cuándo y hacia dónde.</p></div>
+        <div class="network-map reveal"><div class="map-caption"><span class="eyebrow">TOPOLOGÍA / LIVE VIEW</span><strong>El viaje de un paquete</strong><small>Observa cómo un mensaje cruza la infraestructura.</small></div><div class="network-canvas"><div class="net-node computer">▣<small>CLIENTE</small></div><div class="net-node switch">✣<small>SWITCH</small></div><div class="net-node server">▤<small>SERVIDOR</small></div><div class="net-node router">◈<small>ROUTER</small></div><div class="net-link link-one"></div><div class="net-link link-two"></div><div class="net-link link-three"></div><div class="net-link link-four"></div><span class="net-packet np-one"></span><span class="net-packet np-two"></span></div></div>
+        <div class="comparison-layout reveal"><div class="comparison-copy"><span class="eyebrow">IDENTIDAD EN LA RED</span><h3>IP vs. MAC</h3><p>Dos direcciones, dos preguntas distintas. Selecciona una para distinguir la identidad lógica de la identidad física.</p><div class="switcher"><button class="switch-button active" data-address="ip">IP</button><button class="switch-button" data-address="mac">MAC</button></div><div class="address-answer"><strong id="addressTitle">Dirección IP</strong><p id="addressText">Es una dirección lógica que identifica a un dispositivo dentro de una red. Puede cambiar según la configuración.</p><code id="addressExample">192.168.1.24</code></div></div><div class="address-table"><div class="table-row table-head"><span>CRITERIO</span><span>IP</span><span>MAC</span></div><div class="table-row"><span>Naturaleza</span><span>Lógica</span><span>Física</span></div><div class="table-row"><span>Puede cambiar</span><span>Sí</span><span>No suele</span></div><div class="table-row"><span>Ejemplo</span><span>10.0.0.8</span><span>A4:5E:60:9B:2C:11</span></div></div></div>
+        <div class="subsection-head reveal"><div><span class="eyebrow">DISEÑO DE LA CONEXIÓN</span><h3>Topologías de red</h3></div><p>La forma de conectar los nodos determina cómo se propaga una falla.</p></div>
+        <div class="topology-tabs reveal"><div class="topology-buttons"><button class="topology-button active" data-topology="star">Estrella <span>01</span></button><button class="topology-button" data-topology="ring">Anillo <span>02</span></button><button class="topology-button" data-topology="bus">Bus <span>03</span></button></div><div class="topology-display"><div class="topology-drawing" id="topologyDrawing"><div class="topo-center">CORE</div><i class="topo-node tn-1"></i><i class="topo-node tn-2"></i><i class="topo-node tn-3"></i><i class="topo-node tn-4"></i><i class="topo-line tl-1"></i><i class="topo-line tl-2"></i><i class="topo-line tl-3"></i><i class="topo-line tl-4"></i></div><div class="topology-copy"><span class="eyebrow">TOPOLOGÍA ENFOCADA</span><h3 id="topologyTitle">Estrella</h3><p id="topologyText">Todos los dispositivos se conectan a un nodo central. Es sencilla de administrar, pero una falla en el centro puede interrumpir toda la red.</p><div class="impact"><span>IMPACTO DE FALLA</span><strong id="topologyImpact">ALTO EN EL NODO CENTRAL</strong></div></div></div></div>
+      </div>
+    </section>
+
+    <section class="module module-dark section-pad" id="modulo-3" aria-labelledby="m3-title">
+      <div class="container">
+        <div class="module-heading reveal"><div class="module-number">03</div><div><p class="eyebrow accent">APLICACIÓN / INFORMÁTICA FORENSE</p><h2 id="m3-title">Investigar es conectar<br>las piezas</h2></div><p class="module-summary">La memoria, los registros y el tráfico de red ofrecen perspectivas distintas. Juntos ayudan a construir una línea de tiempo más completa.</p></div>
+        <div class="evidence-grid reveal"><article class="evidence-card"><span class="evidence-number">01</span><div class="evidence-icon">▥</div><h3>RAM</h3><p>Contiene procesos activos, aplicaciones, conexiones y datos temporales. Puede desaparecer al apagar el equipo.</p><strong>EVIDENCIA VOLÁTIL</strong></article><article class="evidence-card featured"><span class="evidence-number">02</span><div class="evidence-icon">⌘</div><h3>Registros</h3><p>Permiten comprender qué instrucciones, datos y direcciones estaban siendo procesados por la CPU.</p><strong>ESTADO DEL PROCESO</strong></article><article class="evidence-card"><span class="evidence-number">03</span><div class="evidence-icon">⇄</div><h3>Tráfico de red</h3><p>Revela comunicaciones, protocolos, origen, destino y conexiones entre dispositivos.</p><strong>RUTA DE COMUNICACIÓN</strong></article></div>
+        <div class="investigator-view reveal"><div class="investigator-quote"><span class="eyebrow accent">PERSPECTIVA DEL INVESTIGADOR</span><h3>¿Qué observa un investigador?</h3><blockquote>“Analizar diferentes fuentes de evidencia permite construir una visión más completa de lo ocurrido.”</blockquote></div><div class="timeline"><div><span>RAM</span><b>lo que estaba vivo</b></div><div><span>REGISTROS</span><b>lo que se procesaba</b></div><div><span>RED</span><b>lo que se comunicaba</b></div></div></div>
+      </div>
+    </section>
+
+    <section class="activity-section section-pad container" aria-labelledby="activity-title"><div class="activity-heading reveal"><div><span class="eyebrow">PON A PRUEBA LO APRENDIDO</span><h2 id="activity-title">Sala de operaciones</h2></div><p>Pequeñas decisiones para fijar los conceptos importantes.</p></div><div class="quiz-card reveal"><div class="quiz-meta"><span>ACTIVIDAD 05 / 05</span><span id="quizProgress">● ○ ○ ○</span></div><h3>¿Qué tipo de información podría ser útil durante una investigación?</h3><div class="quiz-options"><button class="quiz-option" data-answer="wrong">Solo la memoria RAM</button><button class="quiz-option" data-answer="wrong">Solo los registros</button><button class="quiz-option" data-answer="wrong">Solo el tráfico de red</button><button class="quiz-option correct" data-answer="correct">Todas las anteriores</button></div><p class="quiz-feedback" id="quizFeedback" role="status"></p></div></section>
+
+    <section class="conclusions section-pad" id="conclusiones" aria-labelledby="conclusion-title"><div class="container conclusion-grid reveal"><div><span class="eyebrow">04 / IDEAS CLAVE</span><h2 id="conclusion-title">La tecnología deja<br><em>rastros.</em></h2></div><div class="key-list"><div><span>01</span><p>La CPU transforma instrucciones en acciones observables.</p></div><div><span>02</span><p>La memoria y los registros conservan estados de distinta duración.</p></div><div><span>03</span><p>La red narra el viaje de los datos entre origen y destino.</p></div><div><span>04</span><p>Correlacionar fuentes convierte fragmentos en contexto.</p></div></div></div></section>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-main"><a class="brand" href="#inicio"><span class="brand-mark">⌁</span><span>FORÉNSICA<span class="brand-dot">.</span>LAB</span></a><p>Sitio educativo para comprender los fundamentos de la arquitectura de computadores, redes de comunicaciones e informática forense.</p><div class="footer-links"><a href="#modulo-1">Módulo 01</a><a href="#modulo-2">Módulo 02</a><a href="#modulo-3">Módulo 03</a></div></div><div class="container footer-bottom"><span>© <span id="currentYear"></span> · HTML5 / CSS3 / JAVASCRIPT</span><span>HECHO PARA APRENDER CON EVIDENCIA</span></div></footer>
+</body>
+</html>
