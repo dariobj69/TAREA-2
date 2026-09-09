@@ -43,15 +43,15 @@ window.addEventListener('scroll', () => {
 }, { passive: true });
 
 const components = {
-  alu: { symbol: '∑', label: 'UNIDAD ARITMÉTICO-LÓGICA', title: 'El lugar donde las instrucciones se vuelven acción.', text: 'La ALU realiza operaciones matemáticas y lógicas: sumar, comparar, desplazar bits o evaluar condiciones. Es una pieza esencial para entender qué cálculo estaba ejecutando un proceso.', tags: ['SUMA', 'COMPARACIÓN', 'DECISIÓN'] },
-  control: { symbol: '◎', label: 'UNIDAD DE CONTROL', title: 'La directora de orquesta del computador.', text: 'La UC interpreta cada instrucción y coordina el movimiento entre memoria, ALU y registros. Su secuencia ayuda a ubicar qué componente actuó y en qué orden.', tags: ['INTERPRETACIÓN', 'SECUENCIA', 'COORDINACIÓN'] },
-  register: { symbol: '▦', label: 'REGISTROS', title: 'La memoria más próxima a la acción.', text: 'Los registros guardan temporalmente datos, direcciones e instrucciones que la CPU necesita de inmediato. Son extremadamente rápidos porque están dentro del procesador.', tags: ['DATOS', 'DIRECCIONES', 'ESTADO'] }
+  alu: { art: 'art-alu', label: 'UNIDAD ARITMÉTICO-LÓGICA', title: 'El lugar donde las instrucciones se vuelven acción.', text: 'La ALU realiza operaciones matemáticas y lógicas: sumar, comparar, desplazar bits o evaluar condiciones. Es una pieza esencial para entender qué cálculo estaba ejecutando un proceso.', tags: ['SUMA', 'COMPARACIÓN', 'DECISIÓN'] },
+  control: { art: 'art-control', label: 'UNIDAD DE CONTROL', title: 'La directora de orquesta del computador.', text: 'La UC interpreta cada instrucción y coordina el movimiento entre memoria, ALU y registros. Su secuencia ayuda a ubicar qué componente actuó y en qué orden.', tags: ['INTERPRETACIÓN', 'SECUENCIA', 'COORDINACIÓN'] },
+  register: { art: 'art-register', label: 'REGISTROS', title: 'La memoria más próxima a la acción.', text: 'Los registros guardan temporalmente datos, direcciones e instrucciones que la CPU necesita de inmediato. Son extremadamente rápidos porque están dentro del procesador.', tags: ['DATOS', 'DIRECCIONES', 'ESTADO'] }
 };
 $$('.component-card').forEach(card => card.addEventListener('click', () => {
   const data = components[card.dataset.component];
   $$('.component-card').forEach(item => item.classList.remove('is-selected'));
   card.classList.add('is-selected');
-  $('#componentDetail').innerHTML = `<div class="detail-symbol">${data.symbol}</div><div><span class="eyebrow accent">${data.label}</span><h3>${data.title}</h3><p>${data.text}</p><div class="tag-list">${data.tags.map(tag => `<span>${tag}</span>`).join('')}</div></div>`;
+  $('#componentDetail').innerHTML = `<div class="concept-art detail-art ${data.art}" aria-hidden="true"><i></i><i></i><i></i></div><div><span class="eyebrow accent">${data.label}</span><h3>${data.title}</h3><p>${data.text}</p><div class="tag-list">${data.tags.map(tag => `<span>${tag}</span>`).join('')}</div></div>`;
 }));
 
 const cycles = { fetch: ['01 / BÚSQUEDA', 'La CPU obtiene la siguiente instrucción desde la memoria.'], decode: ['02 / DECODIFICACIÓN', 'La Unidad de Control interpreta qué debe hacer la instrucción.'], execute: ['03 / EJECUCIÓN', 'La CPU realiza la operación correspondiente y actualiza el estado.'] };
